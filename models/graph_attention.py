@@ -542,8 +542,10 @@ class Attention(nn.Module):
         self.K = K
         if task=='BM':
             self.th = 0.5
+            self.f = 1.0
         else:
             self.th = 0.45
+            self.f = 3.0
 
         self.attention_layer = nn.Sequential(
             nn.Linear(512, self.D),
@@ -572,7 +574,7 @@ class Attention(nn.Module):
         Y = Y.float()
         Y_prob, Y_pred, A = self.forward(X)
         Y_prob = torch.clamp(Y_prob, min=1e-5, max=1. - 1e-5)
-        neg_log_likelihood = -1. * (Y * torch.log(Y_prob) + (1. - Y) * torch.log(1. - Y_prob))
+        neg_log_likelihood = -self.f * (Y * torch.log(Y_prob) + (1. - Y) * torch.log(1. - Y_prob))
 
         return Y_prob, Y_pred, neg_log_likelihood, A
 
