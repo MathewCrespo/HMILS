@@ -1,9 +1,5 @@
 #!/usr/bin/env
 # -*- coding: utf-8 -*-
-'''
-Copyright (c) 2019 gyfastas
-utils functions
-'''
 from __future__ import absolute_import
 import torch
 import os, sys

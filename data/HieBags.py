@@ -12,11 +12,6 @@ from random import randint,sample
 import cv2
 import selectivesearch
 
-'''
-DirectBags -- do selective search in advance
-Two tasks available: Benign and Malignant classifcation and axillary lymph node metastasis (ALNM)
-'''
-
 def is_image_file(filename):
     return any(filename.endswith(extension) for extension in [".png", ".jpg", ".jpeg", ".bmp"])
 
@@ -25,13 +20,13 @@ def is_xml_file(filename):
 
 class HieBags(Dataset):
     '''
-    This Dataset is for doing benign/maglignant classification with US or SWE or two modal together
+    This Dataset is for BM/ALNM task for breast cancer in HMILS
 
     Args:
         root: (str) data root
         sub_list: (int) sub path list [0, 1, 2, 3, 4] indicating which subset to use
         pre_transform: (torchvision.transform) the transform used
-        modality: (int) indicate which modality to use. 0: US 1: SWE 2: US & SWE
+        task: (str) which task to perform (BM/ALNM)
     '''
     def __init__(self, root, pre_transform=None, sub_list = [0,1,2,3,4], task = 'BM'):
         self.root = root

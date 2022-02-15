@@ -1,8 +1,5 @@
 #!/usr/bin/env
 # -*- coding: utf-8 -*-
-'''
-Copyright (c) 2019 gyfastas
-'''
 import torch
 import torch.nn.functional as F
 import torch.nn as nn

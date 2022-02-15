@@ -4,6 +4,7 @@ from shutil import copy, rmtree
 import torch
 from torch.utils.tensorboard import SummaryWriter
 from utils.utility import *
+
 class Logger(object):
     """
     My specific logger.

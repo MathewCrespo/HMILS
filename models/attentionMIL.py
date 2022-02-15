@@ -666,4 +666,3 @@ class GatedAttention(nn.Module):
         neg_log_likelihood = -1. * (Y * torch.log(Y_prob) + (1. - Y) * torch.log(1. - Y_prob))  # negative log bernoulli
 
         return neg_log_likelihood, Y_prob, A
-

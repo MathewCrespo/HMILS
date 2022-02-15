@@ -7,6 +7,7 @@ from torch_geometric.nn import SAGPooling
 from torch_geometric.nn import GCNConv
 from torch_geometric.nn import global_mean_pool as gap, global_max_pool as gmp
 
+
 class FE_Res(nn.Module):
     def __init__(self, input_dim=3, L=500, D=128, K=1):
         super(FE_Res, self).__init__()
