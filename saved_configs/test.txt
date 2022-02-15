@@ -86,3 +86,14 @@ resume:-1
 batchsize:1
 t:0.4
 net:H_Attention_Graph
+config:HMIL-GCN
+data_root:/media/hhy/data/USdata/MergePhase1/BUSSH_final
+log_root:test
+test_fold:1
+task:ALNM
+lr:0.0001
+epoch:50
+resume:-1
+batchsize:1
+t:0.5
+net:H_Attention_Graph

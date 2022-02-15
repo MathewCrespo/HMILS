@@ -75,13 +75,13 @@ if __name__=='__main__':
     #configs = configs.__dict__
     parser.add_argument('--data_root',type=str,default='/media/hhy/data/USdata/MergePhase1/BUSSH_final')
     parser.add_argument('--log_root',type=str)
-    parser.add_argument('--test_fold',type=int,default=0)
-    parser.add_argument('--task',type=str,default='BM')
+    parser.add_argument('--test_fold',type=int,default=0, help='which fold of data is used for test')
+    parser.add_argument('--task',type=str,default='BM', help='BM or ALNM')
     parser.add_argument('--lr',type=float,default=1e-4)
     parser.add_argument('--epoch',type=int,default=50)
     parser.add_argument('--resume',type=int,default=-1)
     parser.add_argument('--batchsize',type=int,default=1)
-    parser.add_argument('--t',type=float)
+    parser.add_argument('--t',type=float, help='threshold coef for graph construction')
     parser.add_argument('--net',type=str,default='H_Attention_Graph')
 
     # parse parameters
